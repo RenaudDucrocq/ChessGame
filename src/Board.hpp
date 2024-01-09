@@ -5,13 +5,13 @@
 #ifndef MAIN_BOARD_HPP
 #define MAIN_BOARD_HPP
 
-#include "Pieces/Bishop.hpp"
-
+#include "Pieces/Piece.hpp"
+#include "array"
 class Board {
 private:
     Player white;
     Player black;
-    Piece* pieces [2][8];
+    array<array<Piece, 8>,2> *pieces;
 public:
     Board(const string& fileName, Player white, Player black);
 

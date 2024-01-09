@@ -28,7 +28,7 @@ public:
 
     virtual bool isMoveAuthorized(Board b, Coordonnees dest) = 0;
 
-    virtual const type_info& getType() = 0;
+    virtual const type_info & getType() = 0;
 
     virtual unsigned int getValue() = 0;
 };

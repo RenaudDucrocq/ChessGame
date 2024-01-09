@@ -7,8 +7,8 @@
 Piece::Piece(Coordonnees position, Player owner) : position(position), owner(owner) {
 }
 
-void Piece::setPosition(Coordonnees position) {
-    this->position = position;
+void Piece::setPosition(Coordonnees p) {
+    this->position = p;
 }
 
 //TODO : à compléter
