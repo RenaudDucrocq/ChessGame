@@ -1,5 +1,5 @@
 //
-// Created by renau on 21/11/2023.
+// Created by renaud on 21/11/2023.
 //
 
 #include "Bishop.hpp"

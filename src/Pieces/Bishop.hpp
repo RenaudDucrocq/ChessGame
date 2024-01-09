@@ -1,5 +1,5 @@
 //
-// Created by renau on 21/11/2023.
+// Created by renaud on 21/11/2023.
 //
 
 #ifndef MAIN_BISHOP_HPP
@@ -8,8 +8,6 @@
 #include "Piece.hpp"
 
 class Bishop : public Piece{
-private:
-    Coordonnees position
 public:
     Bishop(Coordonnees position, Player owner);
     list<Move> getAllMoves(Board board) override;
