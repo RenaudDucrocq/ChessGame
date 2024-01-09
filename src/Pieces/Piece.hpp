@@ -13,6 +13,7 @@
 #include "Move.hpp"
 #include "Board.hpp"
 
+class Board;
 class Piece {
 protected:
     Coordonnees position;

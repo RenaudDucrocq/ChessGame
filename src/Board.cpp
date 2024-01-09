@@ -14,10 +14,18 @@ Board::Board(const string& fileName, Player white, Player black) : white(white),
         string ligne;
         getline(fichier, ligne);
         cout << ligne;
+        Coordonnees c = Coordonnees(ligne[2], ligne[1]);
         switch (ligne[0]) {
-            case 'b':
-                Coordonnees c = Coordonnees(ligne[2],ligne[1]);
-                Bishop *b = new Bishop(c, white);
+            case 'b': {
+                auto *b = new Bishop(c, white);
+                break;
+            }
+            case 'B': {
+                auto *B = new Bishop(c, black);
+                break;
+            }
+            default:
+                break;
         }
 
     } else {
