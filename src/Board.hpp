@@ -7,6 +7,8 @@
 
 #include "Pieces/Piece.hpp"
 #include "array"
+
+class Piece;
 class Board {
 private:
     Player white;
