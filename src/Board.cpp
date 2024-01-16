@@ -11,6 +11,7 @@
 #include "Pieces/King.hpp"
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 Board::Board(const string &fileName, Player white, Player black) : white(white), black(black) {
     ifstream fichier(fileName);
@@ -90,4 +91,62 @@ Board::Board(const string &fileName, Player white, Player black) : white(white),
     } else {
         cout << "ERREUR OUVERTURE DU FICHIER";
     }
+}
+
+list<Piece*> Board::getPieces(Player p) {
+    list<Piece*> piecesList;
+    auto it1 = this->pieces.cbegin();
+    while (it1 != this->pieces.cend()) {
+        auto it2 = it1->cbegin();
+        while ((it2 = find_if(it2, it1->cend(),
+                              [p](Piece *piece) { return piece->sameColor(Pawn(Coordonnees(0, 0), p)); })) !=
+               it1->cend()) {
+            piecesList.push_back(*it2);
+            it2++;
+        }
+        it1++;
+    }
+    return piecesList;
+}
+
+list<Piece *> Board::getPieces() {
+    list<Piece*> piecesList;
+    for(const auto ap : this->pieces){
+        for(const auto p : ap){
+            if (p != nullptr) piecesList.push_back(p);
+        }
+    }
+    return piecesList;
+}
+
+void Board::addPiece(Piece *p) {
+
+}
+
+Piece *Board::getPiece(Coordonnees pos) {
+    return nullptr;
+}
+
+void Board::emptyCell(Coordonnees pos) {
+
+}
+
+bool Board::isEmptyCell(Coordonnees pos) {
+    return false;
+}
+
+list<Coordonnees> Board::getAllCoordonnees() {
+    return list<Coordonnees>();
+}
+
+bool Board::sameColumnNothingBetween(Coordonnees o, Coordonnees d) {
+    return false;
+}
+
+bool Board::sameRowNothingBetween(Coordonnees o, Coordonnees d) {
+    return false;
+}
+
+bool Board::sameDiagonalNothingBetween(Coordonnees o, Coordonnees d) {
+    return false;
 }
