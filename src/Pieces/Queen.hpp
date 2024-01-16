@@ -7,7 +7,7 @@
 
 #include "Piece.hpp"
 
-class Queen : Piece{
+class Queen : public Piece{
 public:
     Queen(Coordonnees position, Player owner);
     list<Move> getAllMoves(Board board) override;
