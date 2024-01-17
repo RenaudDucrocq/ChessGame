@@ -8,15 +8,16 @@
 
 #include "Coordonnees.hpp"
 #include "Player.hpp"
+#include "Pieces/Piece.hpp"
 
 class Move {
 private:
     Coordonnees depart;
     Coordonnees arrive;
-    Player playing;
-    Player waiting;
+    Piece *playing;
+    Piece *waiting;
 public:
-    Move(const Coordonnees &depart, const Coordonnees &arrive, const Player &playing, const Player &waiting);
+    Move(const Coordonnees &depart, const Coordonnees &arrive, Piece *playing, Piece *waiting);
 };
 
 

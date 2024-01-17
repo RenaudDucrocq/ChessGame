@@ -23,7 +23,7 @@ public:
     Piece* getPiece(Coordonnees pos);
     void emptyCell(Coordonnees pos);
     bool isEmptyCell(Coordonnees pos);
-    list<Coordonnees> getAllCoordonnees();
+    static list<Coordonnees> getAllCoordonnees();
     bool sameColumnNothingBetween(Coordonnees o, Coordonnees d);
     bool sameRowNothingBetween(Coordonnees o, Coordonnees d);
     bool sameDiagonalNothingBetween(Coordonnees o, Coordonnees d);

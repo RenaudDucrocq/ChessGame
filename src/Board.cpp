@@ -199,7 +199,6 @@ bool Board::sameDiagonalNothingBetween(Coordonnees o, Coordonnees d) {
     auto maxc = max(colo,cold);
     auto dialig = minl+1;
     auto diacol = minc+1;
-    auto res = true;
     while (this->pieces[dialig][diacol] == nullptr && dialig < maxl && diacol < maxc){
         dialig++;
         diacol++;
