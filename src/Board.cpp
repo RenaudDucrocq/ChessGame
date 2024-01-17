@@ -17,7 +17,6 @@ Board::Board(const string &fileName, Player white, Player black) : white(white),
     ifstream fichier(fileName);
     if (fichier) {
         string ligne;
-        unsigned int i = 0;
         while (getline(fichier, ligne)) {
             cout << ligne;
             Coordonnees c = Coordonnees(ligne[2], ligne[1]);
@@ -25,62 +24,62 @@ Board::Board(const string &fileName, Player white, Player black) : white(white),
             switch (ligne[0]) {
                 case 'p': {
                     auto *p = new Pawn(c, white);
-                    this->pieces[0][i] = p;
+                    this->addPiece(p);
                     break;
                 }
                 case 'P': {
                     auto *p = new Pawn(c, black);
-                    this->pieces[1][i] = p;
+                    this->addPiece(p);
                     break;
                 }
                 case 'b': {
                     auto *p = new Bishop(c, white);
-                    this->pieces[0][i] = p;
+                    this->addPiece(p);
                     break;
                 }
                 case 'B': {
                     auto *p = new Bishop(c, black);
-                    this->pieces[1][i] = p;
+                    this->addPiece(p);
                     break;
                 }
                 case 'n': {
                     auto *p = new Knight(c, white);
-                    this->pieces[0][i] = p;
+                    this->addPiece(p);
                     break;
                 }
                 case 'N': {
                     auto *p = new Knight(c, black);
-                    this->pieces[1][i] = p;
+                    this->addPiece(p);
                     break;
                 }
                 case 'r': {
                     auto *p = new Rook(c, white);
-                    this->pieces[0][i] = p;
+                    this->addPiece(p);
                     break;
                 }
                 case 'R': {
                     auto *p = new Rook(c, black);
-                    this->pieces[1][i] = p;
+                    this->addPiece(p);
                     break;
                 }
                 case 'q': {
                     auto *p = new Queen(c, white);
-                    this->pieces[0][i] = p;
+                    this->addPiece(p);
                     break;
                 }
                 case 'Q': {
                     auto *p = new Queen(c, black);
-                    this->pieces[1][i] = p;
+                    this->addPiece(p);
                     break;
                 }
                 case 'k': {
                     auto *p = new King(c, white);
-                    this->pieces[0][i] = p;
+                    this->addPiece(p);
                     break;
                 }
                 case 'K': {
                     auto *p = new King(c, black);
-                    this->pieces[1][i] = p;
+                    this->addPiece(p);
                     break;
                 }
                 default:
@@ -120,33 +119,90 @@ list<Piece *> Board::getPieces() {
 }
 
 void Board::addPiece(Piece *p) {
+    auto col = p->getPosition().getColonne();
+    auto lig = p->getPosition().getLigne();
 
+    this->pieces[lig][col] = p;
 }
 
 Piece *Board::getPiece(Coordonnees pos) {
-    return nullptr;
+    auto lig = pos.getLigne();
+    auto col = pos.getColonne();
+
+    return this->pieces[lig][col];
 }
 
 void Board::emptyCell(Coordonnees pos) {
+    auto lig = pos.getLigne();
+    auto col = pos.getColonne();
 
+    this->pieces[lig][col] = nullptr;
 }
 
 bool Board::isEmptyCell(Coordonnees pos) {
-    return false;
+    auto lig = pos.getLigne();
+    auto col = pos.getColonne();
+
+    return (this->pieces[lig][col] == nullptr);
 }
 
 list<Coordonnees> Board::getAllCoordonnees() {
-    return list<Coordonnees>();
+    list<Coordonnees> allpos;
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j)
+            allpos.emplace_back(i, j);
+
+    }
+    return allpos;
 }
 
 bool Board::sameColumnNothingBetween(Coordonnees o, Coordonnees d) {
-    return false;
+    auto ligo = o.getLigne();
+    auto colo = o.getColonne();
+    auto ligd = d.getLigne();
+    auto cold = d.getColonne();
+    auto minl = min(ligd, ligo);
+    auto maxl = max(ligo,ligd);
+    if (colo == cold){
+        for (unsigned int i = minl+1; i < maxl; ++i) {
+            if (this->pieces[i][cold] != nullptr) return false;
+        }
+    }
+    else return false;
+    return true;
 }
 
 bool Board::sameRowNothingBetween(Coordonnees o, Coordonnees d) {
-    return false;
+    auto ligo = o.getLigne();
+    auto colo = o.getColonne();
+    auto ligd = d.getLigne();
+    auto cold = d.getColonne();
+    auto minl = min(cold, colo);
+    auto maxl = max(colo,cold);
+    if (ligo == ligd){
+        for (unsigned int i = minl+1; i < maxl; ++i) {
+            if (this->pieces[ligo][i] != nullptr) return false;
+        }
+    }
+    else return false;
+    return true;
 }
 
 bool Board::sameDiagonalNothingBetween(Coordonnees o, Coordonnees d) {
-    return false;
+    auto ligo = o.getLigne();
+    auto colo = o.getColonne();
+    auto ligd = d.getLigne();
+    auto cold = d.getColonne();
+    auto minl = min(ligd, ligo);
+    auto maxl = max(ligo,ligd);
+    auto minc = min(cold, colo);
+    auto maxc = max(colo,cold);
+    auto dialig = minl+1;
+    auto diacol = minc+1;
+    auto res = true;
+    while (this->pieces[dialig][diacol] == nullptr && dialig < maxl && diacol < maxc){
+        dialig++;
+        diacol++;
+    }
+    return (this->pieces[dialig][diacol] == nullptr);
 }

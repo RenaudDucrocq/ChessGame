@@ -4,15 +4,23 @@
 
 #include "Coordonnees.hpp"
 
-Coordonnees::Coordonnees(int ligne, char colonne) {
+Coordonnees::Coordonnees(int ligne, unsigned colonne) {
     this->ligne = ligne;
     this->colonne = colonne;
 }
 
 string Coordonnees::to_String() const {
-    return this->colonne + to_string(this->ligne) ;
+    return to_string(this->colonne) + to_string(this->ligne) ;
 }
 
 bool Coordonnees::equals(Coordonnees& o) const {
     return this->ligne == o.ligne && this->colonne == o.colonne ;
+}
+
+unsigned int Coordonnees::getLigne() const {
+    return ligne;
+}
+
+unsigned int Coordonnees::getColonne() const {
+    return colonne;
 }

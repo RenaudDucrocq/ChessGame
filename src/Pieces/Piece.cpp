@@ -16,3 +16,7 @@ bool Piece::sameColor(const Piece &autrePiece) {
     return false;
 }
 
+const Coordonnees &Piece::getPosition() const {
+    return position;
+}
+

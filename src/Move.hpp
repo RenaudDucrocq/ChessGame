@@ -6,8 +6,17 @@
 #define MAIN_MOVE_HPP
 
 
-class Move {
+#include "Coordonnees.hpp"
+#include "Player.hpp"
 
+class Move {
+private:
+    Coordonnees depart;
+    Coordonnees arrive;
+    Player playing;
+    Player waiting;
+public:
+    Move(const Coordonnees &depart, const Coordonnees &arrive, const Player &playing, const Player &waiting);
 };
 
 

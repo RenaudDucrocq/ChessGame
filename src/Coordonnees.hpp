@@ -14,13 +14,17 @@ class Coordonnees {
 
 private:
     unsigned int ligne;
-    char colonne;
+    unsigned int colonne;
 public:
-    Coordonnees(int ligne, char colonne);
+    Coordonnees(int ligne, unsigned int colonne);
 
     string to_String() const;
 
     bool equals(Coordonnees& o) const;
+
+    unsigned int getLigne() const;
+
+    unsigned int getColonne() const;
 
 
 };

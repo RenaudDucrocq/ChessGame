@@ -32,6 +32,8 @@ public:
     virtual const type_info & getType() = 0;
 
     virtual unsigned int getValue() = 0;
+
+    const Coordonnees &getPosition() const;
 };
 
 
