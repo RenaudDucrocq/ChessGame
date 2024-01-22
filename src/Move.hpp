@@ -10,6 +10,7 @@
 #include "Player.hpp"
 #include "Pieces/Piece.hpp"
 
+class Piece;
 class Move {
 private:
     Coordonnees depart;

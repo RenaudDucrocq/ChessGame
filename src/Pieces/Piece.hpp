@@ -14,6 +14,7 @@
 #include "Board.hpp"
 
 class Board;
+class Move;
 class Piece {
 protected:
     Coordonnees position;
