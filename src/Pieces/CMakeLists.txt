@@ -1,0 +1,18 @@
+target_sources(
+        main
+        PRIVATE
+        ${CMAKE_CURRENT_LIST_DIR}/Piece.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/Piece.hpp
+        ${CMAKE_CURRENT_LIST_DIR}/Bishop.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/Bishop.hpp
+        ${CMAKE_CURRENT_LIST_DIR}/King.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/King.hpp
+        ${CMAKE_CURRENT_LIST_DIR}/Queen.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/Queen.hpp
+        ${CMAKE_CURRENT_LIST_DIR}/Knight.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/Knight.hpp
+        ${CMAKE_CURRENT_LIST_DIR}/Rook.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/Rook.hpp
+        ${CMAKE_CURRENT_LIST_DIR}/Pawn.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/Pawn.hpp
+)
