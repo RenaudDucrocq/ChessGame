@@ -1,13 +1,23 @@
+##########################################
+########## Global Configuration ##########
+##########################################
+
+# Allow for relative headers import
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
+# If building on Windows, static library linking to avoid dll nightmare
 if(WIN32)
     set(SFML_STATIC_LIBRARIES TRUE)
 endif()
 
-link_directories()
+# Check for SFML correctly installed
+find_package(SFML REQUIRED COMPONENTS graphics window system)
 
-find_package(SFML REQUIRED COMPONENTS graphics window system) # Look for SFML
+##########################################
+############## Main Section ##############
+##########################################
 
+# Add main target, final executable
 add_executable(
     main
 
@@ -31,8 +41,22 @@ else()
     target_link_libraries(main sfml-graphics sfml-window sfml-system)
 endif()
 
-############################################################################
-###### Enable this option for final release. Disable console & stdout ######
-############################################################################
+# Enable this option for final release. Disable console & stdout
 
 # target_link_options(main PRIVATE -mwindows)
+
+##########################################
+############# Client Section #############
+##########################################
+
+add_executable(
+    main_client
+)
+
+add_subdirectory(Client)
+
+if (WIN32)
+    target_link_libraries(main_client -static sfml-graphics sfml-window sfml-system)
+else()
+    target_link_libraries(main_client sfml-graphics sfml-window sfml-system)
+endif()
