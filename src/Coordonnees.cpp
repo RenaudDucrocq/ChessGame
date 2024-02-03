@@ -4,7 +4,7 @@
 
 #include "Coordonnees.hpp"
 
-Coordonnees::Coordonnees(int ligne, unsigned colonne) {
+Coordonnees::Coordonnees(unsigned int ligne, unsigned colonne) {
     this->ligne = ligne;
     this->colonne = colonne;
 }

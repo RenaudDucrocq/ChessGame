@@ -16,7 +16,7 @@ private:
     unsigned int ligne;
     unsigned int colonne;
 public:
-    Coordonnees(int ligne, unsigned int colonne);
+    Coordonnees(unsigned int ligne, unsigned int colonne);
 
     string to_String() const;
 
