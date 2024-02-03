@@ -1,5 +1,7 @@
 JAVA/
 cmake-build-debug/
 /.idea/vcs.xml
-.vscode
 build
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
