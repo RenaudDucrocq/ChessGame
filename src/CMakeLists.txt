@@ -60,3 +60,9 @@ if (WIN32)
 else()
     target_link_libraries(main_client sfml-graphics sfml-window sfml-system)
 endif()
+
+add_custom_command(
+    TARGET main_client PRE_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    ${CMAKE_SOURCE_DIR}/assets $<TARGET_FILE_DIR:main_client>/assets
+)
