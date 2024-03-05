@@ -7,18 +7,17 @@
 
 
 #include "Coordonnees.hpp"
-#include "Player.hpp"
-#include "Pieces/Piece.hpp"
 
-class Piece;
 class Action {
 private:
     Coordonnees depart;
     Coordonnees arrive;
-    Piece *playing;
-    Piece *waiting;
 public:
-    Action(const Coordonnees &depart, const Coordonnees &arrive, Piece *playing, Piece *waiting);
+    Action(const Coordonnees &depart, const Coordonnees &arrive);
+
+    const Coordonnees &getDepart() const;
+
+    const Coordonnees &getArrive() const;
 };
 
 

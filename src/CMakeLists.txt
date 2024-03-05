@@ -14,9 +14,7 @@ add_executable(
     main.cpp
     Coordonnees.hpp
     Coordonnees.cpp
-    FromTo.cpp
-    FromTo.hpp
-    Player.cpp
+        Player.cpp
     Player.hpp
         Action.cpp
         Action.hpp
