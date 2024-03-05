@@ -19,3 +19,6 @@ const Coordonnees &Piece::getPosition() const {
     return position;
 }
 
+Couleur Piece::getCouleur() {
+    return this->couleur;
+}

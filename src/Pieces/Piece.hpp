@@ -30,6 +30,8 @@ public:
     virtual unsigned int getValue() = 0;
 
     const Coordonnees &getPosition() const;
+
+    Couleur getCouleur();
 };
 
 
