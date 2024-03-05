@@ -2,8 +2,8 @@
 // Created by renaud on 21/11/2023.
 //
 
-#ifndef MAIN_MOVE_HPP
-#define MAIN_MOVE_HPP
+#ifndef MAIN_ACTION_HPP
+#define MAIN_ACTION_HPP
 
 
 #include "Coordonnees.hpp"
@@ -11,15 +11,15 @@
 #include "Pieces/Piece.hpp"
 
 class Piece;
-class Move {
+class Action {
 private:
     Coordonnees depart;
     Coordonnees arrive;
     Piece *playing;
     Piece *waiting;
 public:
-    Move(const Coordonnees &depart, const Coordonnees &arrive, Piece *playing, Piece *waiting);
+    Action(const Coordonnees &depart, const Coordonnees &arrive, Piece *playing, Piece *waiting);
 };
 
 
-#endif //MAIN_MOVE_HPP
+#endif //MAIN_ACTION_HPP

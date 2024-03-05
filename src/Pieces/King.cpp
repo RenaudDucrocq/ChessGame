@@ -4,15 +4,7 @@
 
 #include "King.hpp"
 
-King::King(Coordonnees position, Player owner) : Piece(position, owner) {
-}
-
-bool King::isMoveAuthorized(Board b, Coordonnees dest) {
-    return false;
-}
-
-list<Move> King::getAllMoves(Board board) {
-    return {};
+King::King(Coordonnees position, Couleur couleur1) : Piece(position, couleur1) {
 }
 
 const type_info &King::getType() {
@@ -21,5 +13,9 @@ const type_info &King::getType() {
 
 unsigned int King::getValue() {
     return 0;
+}
+
+list<Action> King::getAllActions() {
+    return {};
 }
 

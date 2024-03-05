@@ -4,15 +4,7 @@
 
 #include "Knight.hpp"
 
-Knight::Knight(Coordonnees position, Player owner) : Piece(position, owner) {
-}
-
-bool Knight::isMoveAuthorized(Board b, Coordonnees dest) {
-    return false;
-}
-
-list<Move> Knight::getAllMoves(Board board) {
-    return {};
+Knight::Knight(Coordonnees position, Couleur couleur1) : Piece(position, couleur1) {
 }
 
 const type_info &Knight::getType() {
@@ -21,4 +13,8 @@ const type_info &Knight::getType() {
 
 unsigned int Knight::getValue() {
     return 3;
+}
+
+list<Action> Knight::getAllActions() {
+    return {};
 }

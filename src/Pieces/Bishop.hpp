@@ -9,10 +9,12 @@
 
 class Bishop : public Piece{
 public:
-    Bishop(Coordonnees position, Player owner);
-    list<Move> getAllMoves(Board board) override;
-    bool isMoveAuthorized(Board b, Coordonnees dest) override;
-    const type_info & getType() override;
+    Bishop(const Coordonnees &position, Couleur couleur1);
+
+    list<Action> getAllActions() override;
+
+    const type_info &getType() override;
+
     unsigned int getValue() override;
 
 };

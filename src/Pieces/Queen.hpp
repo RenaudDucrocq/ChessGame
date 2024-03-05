@@ -7,12 +7,14 @@
 
 #include "Piece.hpp"
 
-class Queen : public Piece{
+class Queen : public Piece {
 public:
-    Queen(Coordonnees position, Player owner);
-    list<Move> getAllMoves(Board board) override;
-    bool isMoveAuthorized(Board b, Coordonnees dest) override;
-    const type_info & getType() override;
+    Queen(Coordonnees position, Couleur couleur1);
+
+    list<Action> getAllActions() override;
+
+    const type_info &getType() override;
+
     unsigned int getValue() override;
 };
 

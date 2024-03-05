@@ -4,15 +4,7 @@
 
 #include "Queen.hpp"
 
-Queen::Queen(Coordonnees position, Player owner) : Piece(position, owner) {
-}
-
-bool Queen::isMoveAuthorized(Board b, Coordonnees dest) {
-    return false;
-}
-
-list<Move> Queen::getAllMoves(Board board) {
-    return {};
+Queen::Queen(Coordonnees position, Couleur couleur1) : Piece(position, couleur1) {
 }
 
 const type_info &Queen::getType() {
@@ -21,4 +13,8 @@ const type_info &Queen::getType() {
 
 unsigned int Queen::getValue() {
     return 9;
+}
+
+list<Action> Queen::getAllActions() {
+    return {};
 }

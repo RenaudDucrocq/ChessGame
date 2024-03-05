@@ -9,10 +9,12 @@
 
 class Rook : public Piece {
 public:
-    Rook(Coordonnees position, Player owner);
-    list<Move> getAllMoves(Board board) override;
-    bool isMoveAuthorized(Board b, Coordonnees dest) override;
-    const type_info & getType() override;
+    Rook(Coordonnees position, Couleur couleur1);
+
+    list<Action> getAllActions() override;
+
+    const type_info &getType() override;
+
     unsigned int getValue() override;
 };
 

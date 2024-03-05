@@ -9,26 +9,21 @@
 #include <typeinfo>
 
 #include "Coordonnees.hpp"
-#include "Player.hpp"
-#include "Move.hpp"
-#include "Board.hpp"
+#include "Couleur.hpp"
+#include "Action.hpp"
 
-class Board;
-class Move;
 class Piece {
 protected:
     Coordonnees position;
-    Player owner;
+    Couleur couleur;
 public:
-    Piece(Coordonnees position, Player owner);
+    Piece(Coordonnees position, Couleur couleur1);
 
     void setPosition(Coordonnees position);
 
-    virtual list<Move> getAllMoves(Board board) = 0;
+    virtual list<Action> getAllActions() = 0;
 
-    bool sameColor(Piece const &autrePiece);
-
-    virtual bool isMoveAuthorized(Board b, Coordonnees dest) = 0;
+    bool sameColor(Couleur couleur1);
 
     virtual const type_info & getType() = 0;
 

@@ -4,15 +4,7 @@
 
 #include "Pawn.hpp"
 
-Pawn::Pawn(Coordonnees position, Player owner) : Piece(position, owner) {
-}
-
-bool Pawn::isMoveAuthorized(Board b, Coordonnees dest) {
-    return false;
-}
-
-list<Move> Pawn::getAllMoves(Board board) {
-    return {};
+Pawn::Pawn(Coordonnees position, Couleur couleur1) : Piece(position, couleur1) {
 }
 
 const type_info &Pawn::getType() {
@@ -21,4 +13,8 @@ const type_info &Pawn::getType() {
 
 unsigned int Pawn::getValue() {
     return 1;
+}
+
+list<Action> Pawn::getAllActions() {
+    return {};
 }

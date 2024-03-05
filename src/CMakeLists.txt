@@ -18,10 +18,11 @@ add_executable(
     FromTo.hpp
     Player.cpp
     Player.hpp
-    Move.cpp
-    Move.hpp
+        Action.cpp
+        Action.hpp
     Board.cpp
     Board.hpp
+        Couleur.hpp
 )
 
 add_subdirectory(Pieces)

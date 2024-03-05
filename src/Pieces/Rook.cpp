@@ -4,15 +4,7 @@
 
 #include "Rook.hpp"
 
-Rook::Rook(Coordonnees position, Player owner) : Piece(position, owner) {
-}
-
-bool Rook::isMoveAuthorized(Board b, Coordonnees dest) {
-    return false;
-}
-
-list<Move> Rook::getAllMoves(Board board) {
-    return {};
+Rook::Rook(Coordonnees position, Couleur couleur1) : Piece(position, couleur1) {
 }
 
 const type_info &Rook::getType() {
@@ -21,4 +13,8 @@ const type_info &Rook::getType() {
 
 unsigned int Rook::getValue() {
     return 5;
+}
+
+list<Action> Rook::getAllActions() {
+    return {};
 }
