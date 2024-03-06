@@ -14,8 +14,8 @@ add_executable(
     main.cpp
     Coordonnees.hpp
     Coordonnees.cpp
-        Player.cpp
-    Player.hpp
+        Joueur.cpp
+        Joueur.hpp
         Action.cpp
         Action.hpp
     Board.cpp

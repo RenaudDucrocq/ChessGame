@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Coordonnees.hpp"
 #include "Pieces/Bishop.hpp"
+#include "Joueur.hpp"
 
 #include <SFML/Graphics.hpp>
 
@@ -12,10 +13,12 @@ int main(int argc, char *argv[]) {
     bool a = c.equals(d);
     if (a) std::cout << "True";
     else std::cout << "False";
-    Player *p = new Player();
-    auto *b = new Bishop(c, *p);
+    auto *b = new Bishop(c, Couleur(WHITE));
 
     std::cout << b->getValue();
+
+    Joueur *j = new Joueur(Couleur(WHITE), 100);
+    cout << j->getScore();
 
     sf::Window window(sf::VideoMode(800, 600), "ChessGame");
 

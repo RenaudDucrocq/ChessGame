@@ -3,17 +3,9 @@
 //
 
 #include "Board.hpp"
-#include "Pieces/Bishop.hpp"
-#include "Pieces/Pawn.hpp"
-#include "Pieces/Knight.hpp"
-#include "Pieces/Rook.hpp"
-#include "Pieces/Queen.hpp"
-#include "Pieces/King.hpp"
-#include <iostream>
-#include <fstream>
-#include <algorithm>
 
-Board::Board(const string &fileName, Player white, Player black) : white(white), black(black) {
+
+/*Board::Board(const string &fileName, Player white, Player black) : white(white), black(black) {
     ifstream fichier(fileName);
     if (fichier) {
         string ligne;
@@ -205,3 +197,4 @@ bool Board::sameDiagonalNothingBetween(Coordonnees o, Coordonnees d) {
     }
     return (this->pieces[dialig][diacol] == nullptr);
 }
+*/
