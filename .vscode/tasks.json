@@ -6,7 +6,7 @@
 			"label": "CMake: build",
 			"command": "build",
 			"targets": [
-				"main",
+				// "main",
 				"main_client"
 			],
 			"group": {

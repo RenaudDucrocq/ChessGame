@@ -54,6 +54,7 @@ add_executable(
 )
 
 add_subdirectory(Client)
+add_subdirectory(Interface)
 
 if (WIN32)
     target_link_libraries(main_client -static sfml-graphics sfml-window sfml-system)

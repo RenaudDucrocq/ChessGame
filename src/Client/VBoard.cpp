@@ -33,6 +33,7 @@ VBoard::VBoard()
     m_boardTexture.display();
 
     m_boardSprite.setTexture(m_boardTexture.getTexture());
+    m_boardSprite.setPosition(0, 0);
 }
 
 void VBoard::draw(sf::RenderTarget& target, sf::RenderStates states) const
