@@ -9,7 +9,7 @@ class IGame
 private:
     
 public:
-    virtual IBoard getBoard() = 0;
+    virtual const IBoard &getBoard() const = 0;
 };
 
 #endif //IGAME_H_INCLUDED

@@ -9,7 +9,7 @@ class IBoard
 private:
     
 public:
-    virtual std::vector<IPiece> getPieces() = 0;
+    virtual std::vector<IPiece*> getPieces() const = 0;
 };
 
 #endif //IBOARD_H_INCLUDED

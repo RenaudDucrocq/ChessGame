@@ -13,6 +13,10 @@ IPiece::IPiece(Type type): m_type(type)
 {
 }
 
+IPiece::~IPiece()
+{
+}
+
 const std::string &IPiece::getLabel()
 {
     return g_typeLabels.at(m_type);

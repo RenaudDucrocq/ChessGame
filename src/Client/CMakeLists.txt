@@ -4,3 +4,5 @@ target_sources(
     ${CMAKE_CURRENT_LIST_DIR}/main.cpp
     ${CMAKE_CURRENT_LIST_DIR}/VBoard.cpp
 )
+
+add_subdirectory(Mock)

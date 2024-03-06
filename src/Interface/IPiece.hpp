@@ -28,6 +28,7 @@ private:
     Type m_type;
 public:
     IPiece(Type type);
+    virtual ~IPiece();
     virtual const Color &getColor() = 0;
     virtual const sf::Vector2u &getPosition() const = 0;
     virtual const Type &getType() = 0;
