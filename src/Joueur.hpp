@@ -7,7 +7,7 @@
 
 
 #include "Pieces/Piece.hpp"
-#include <vector>
+
 
 class Joueur {
 private:
@@ -26,6 +26,8 @@ public:
     void addPiece(Piece * piece);
 
     int getScore() const;
+
+    vector<Action> getAllActions();
 
 };
 

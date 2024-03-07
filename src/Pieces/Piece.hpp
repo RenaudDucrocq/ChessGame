@@ -5,7 +5,6 @@
 #ifndef MAIN_PIECE_HPP
 #define MAIN_PIECE_HPP
 
-#include <list>
 #include <typeinfo>
 
 #include "Coordonnees.hpp"
@@ -21,7 +20,7 @@ public:
 
     void setPosition(Coordonnees position);
 
-    virtual list<Action> getAllActions() = 0;
+    virtual vector <Action> getAllActions() = 0;
 
     bool sameColor(Couleur couleur1);
 
@@ -32,6 +31,8 @@ public:
     const Coordonnees &getPosition() const;
 
     Couleur getCouleur();
+
+    virtual ~Piece();
 };
 
 

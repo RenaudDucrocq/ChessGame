@@ -1,24 +1,19 @@
 #include <iostream>
-#include "Coordonnees.hpp"
-#include "Pieces/Bishop.hpp"
-#include "Joueur.hpp"
+#include "Board.hpp"
+#include <Pieces/Bishop.hpp>
 
 #include <SFML/Graphics.hpp>
 
 int main(int argc, char *argv[]) {
     std::cout << "Hello, World!" << std::endl;
-    Coordonnees c = Coordonnees(1, 'A');
-    std::cout << c.to_String();
-    Coordonnees d = Coordonnees(1, 'B');
-    bool a = c.equals(d);
-    if (a) std::cout << "True";
-    else std::cout << "False";
-    auto *b = new Bishop(c, Couleur(WHITE));
+    Coordonnees c = Coordonnees(-1, 0);
+    std::cout << c.to_String() << "\n";
+    Coordonnees d = Coordonnees(0, 8);
+    std::cout << d.to_String() << "\n";
 
-    std::cout << b->getValue();
-
-    Joueur *j = new Joueur(Couleur(WHITE), 100);
-    cout << j->getScore();
+    auto *b = new Board();
+    cout << b->inBoardCell(c) << "\n";
+    cout << b->inBoardCell(d) << "\n";
 
     sf::Window window(sf::VideoMode(800, 600), "ChessGame");
 

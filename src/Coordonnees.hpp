@@ -20,13 +20,13 @@ public:
 
     string to_String() const;
 
-    bool equals(Coordonnees& o) const;
+    bool equals(Coordonnees &o) const;
 
     unsigned int getLigne() const;
 
     unsigned int getColonne() const;
 
-
+    bool operator==(const Coordonnees &rhs) const;
 };
 
 

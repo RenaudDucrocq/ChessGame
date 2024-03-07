@@ -4,8 +4,11 @@
 
 #include "Action.hpp"
 
-Action::Action(const Coordonnees &depart, const Coordonnees &arrive) : depart(depart),
-                                                                       arrive(arrive) {}
+#include <utility>
+
+Action::Action(const Coordonnees &depart, const Coordonnees &arrive, const vector<Coordonnees> &chemin) : depart(depart),
+                                                                                                          arrive(arrive),
+                                                                                                          chemin(chemin) {}
 
 const Coordonnees &Action::getDepart() const {
     return depart;
@@ -13,4 +16,8 @@ const Coordonnees &Action::getDepart() const {
 
 const Coordonnees &Action::getArrive() const {
     return arrive;
+}
+
+const vector<Coordonnees> &Action::getChemin() const {
+    return chemin;
 }

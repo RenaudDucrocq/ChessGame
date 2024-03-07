@@ -11,7 +11,7 @@ class Pawn : public Piece {
 public:
     Pawn(Coordonnees position, Couleur couleur1);
 
-    list<Action> getAllActions() override;
+    vector<Action> getAllActions() override;
 
     const type_info &getType() override;
 

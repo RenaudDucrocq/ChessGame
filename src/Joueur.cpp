@@ -32,3 +32,12 @@ void Joueur::addPiece(Piece *piece) {
 int Joueur::getScore() const {
     return Score;
 }
+
+vector<Action> Joueur::getAllActions() {
+    vector<Action> actions = {};
+    for (auto p : this->pieces) {
+        actions.insert(actions.cend(),p->getAllActions().cbegin(),p->getAllActions().cend());
+    }
+
+    return actions;
+}

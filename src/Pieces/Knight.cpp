@@ -15,6 +15,6 @@ unsigned int Knight::getValue() {
     return 3;
 }
 
-list<Action> Knight::getAllActions() {
+vector<Action> Knight::getAllActions() {
     return {};
 }

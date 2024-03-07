@@ -15,7 +15,7 @@ unsigned int King::getValue() {
     return 0;
 }
 
-list<Action> King::getAllActions() {
+vector <Action> King::getAllActions() {
     return {};
 }
 

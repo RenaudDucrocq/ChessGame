@@ -22,3 +22,5 @@ const Coordonnees &Piece::getPosition() const {
 Couleur Piece::getCouleur() {
     return this->couleur;
 }
+
+Piece::~Piece() = default;
