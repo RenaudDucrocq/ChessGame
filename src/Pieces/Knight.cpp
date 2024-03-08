@@ -7,8 +7,8 @@
 Knight::Knight(Coordonnees position, Couleur couleur1) : Piece(position, couleur1) {
 }
 
-const type_info &Knight::getType() {
-    return typeid(this);
+Type Knight::getType() {
+    return Type(KNIGHT);
 }
 
 unsigned int Knight::getValue() {

@@ -8,8 +8,8 @@
 Pawn::Pawn(Coordonnees position, Couleur couleur1) : Piece(position, couleur1) {
 }
 
-const type_info &Pawn::getType() {
-    return typeid(this);
+Type Pawn::getType() {
+    return Type(PAWN);
 }
 
 unsigned int Pawn::getValue() {

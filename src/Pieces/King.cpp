@@ -7,8 +7,8 @@
 King::King(Coordonnees position, Couleur couleur1) : Piece(position, couleur1) {
 }
 
-const type_info &King::getType() {
-    return typeid(this);
+Type King::getType() {
+    return Type(KING);
 }
 
 unsigned int King::getValue() {

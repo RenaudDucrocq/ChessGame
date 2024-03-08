@@ -27,6 +27,8 @@ public:
     unsigned int getColonne() const;
 
     bool operator==(const Coordonnees &rhs) const;
+
+    bool operator!=(const Coordonnees &rhs) const;
 };
 
 

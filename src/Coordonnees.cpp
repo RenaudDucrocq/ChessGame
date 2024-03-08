@@ -26,3 +26,8 @@ bool Coordonnees::operator==(const Coordonnees &rhs) const {
     return ligne == rhs.ligne &&
            colonne == rhs.colonne;
 }
+
+bool Coordonnees::operator!=(const Coordonnees &rhs) const {
+    return ligne != rhs.ligne ||
+           colonne != rhs.colonne;
+}

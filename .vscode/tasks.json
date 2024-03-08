@@ -6,8 +6,8 @@
 			"label": "CMake: build",
 			"command": "build",
 			"targets": [
-				// "main",
-				"main_client"
+				"main",
+				// "main_client"
 			],
 			"group": {
 				"kind": "build",

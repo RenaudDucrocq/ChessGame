@@ -13,7 +13,7 @@ class Action {
 private:
     Coordonnees depart;
     Coordonnees arrive;
-    vector<Coordonnees> chemin;
+    vector<Coordonnees> chemin; // Liste des cases parcouru Exceptée la case de départ
 public:
     Action(const Coordonnees &depart, const Coordonnees &arrive, const vector<Coordonnees> &chemin);
 

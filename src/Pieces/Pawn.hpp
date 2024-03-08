@@ -13,7 +13,7 @@ public:
 
     vector<Action> getAllActions() override;
 
-    const type_info &getType() override;
+    Type getType() override;
 
     unsigned int getValue() override;
 

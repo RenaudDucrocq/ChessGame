@@ -8,8 +8,8 @@
 Queen::Queen(Coordonnees position, Couleur couleur1) : Piece(position, couleur1) {
 }
 
-const type_info &Queen::getType() {
-    return typeid(this);
+Type Queen::getType() {
+    return Type(QUEEN);
 }
 
 unsigned int Queen::getValue() {

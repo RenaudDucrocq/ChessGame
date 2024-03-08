@@ -7,8 +7,8 @@
 
 Bishop::Bishop(const Coordonnees &position, Couleur couleur1) : Piece(position, couleur1) {}
 
-const type_info &Bishop::getType() {
-    return typeid(this);
+Type Bishop::getType() {
+    return Type(BISHOP);
 }
 
 unsigned int Bishop::getValue() {

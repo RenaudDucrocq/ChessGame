@@ -38,8 +38,8 @@ vector<Action> Board::getAllActions() {
     return actions;
 }
 
-bool Board::isActionAuthorised(const Action &action) {
-    return emptyWay(action) && inBoardWay(action);
+bool Board::isActionAuthorised(const Action &action) {    
+    return (emptyWay(action) || isAttack(action)) && inBoardWay(action);
 }
 
 bool Board::emptyCell(Coordonnees coordonnees) {
@@ -69,5 +69,18 @@ bool Board::inBoardWay(const Action &action) {
         return this->inBoardCell(c);
     }))
         return true;
+    return false;
+}
+
+bool Board::isAttack(const Action &action){
+    if (!emptyWay(action))
+    {   
+        for (auto c : action.getChemin()){
+            if (!emptyCell(c) && c == action.getArrive())
+                return true;
+            else if (!emptyCell(c) && c != action.getArrive())
+                return false;
+        }
+    }
     return false;
 }

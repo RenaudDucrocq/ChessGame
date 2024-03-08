@@ -32,6 +32,8 @@ public:
     bool inBoardCell(Coordonnees coordonnees);
 
     bool inBoardWay(const Action &action);
+
+    bool isAttack(const Action &action);
 };
 
 

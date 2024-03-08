@@ -8,8 +8,8 @@
 Rook::Rook(Coordonnees position, Couleur couleur1) : Piece(position, couleur1) {
 }
 
-const type_info &Rook::getType() {
-    return typeid(this);
+Type Rook::getType() {
+    return Type(ROOK);
 }
 
 unsigned int Rook::getValue() {
