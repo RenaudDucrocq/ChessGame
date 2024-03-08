@@ -16,5 +16,57 @@ unsigned int Bishop::getValue() {
 }
 
 vector <Action> Bishop::getAllActions() {
-    return {};
+    vector<Action> actionlist;
+    vector<Coordonnees> chemin;
+    Coordonnees depart = this->getPosition();
+    unsigned int ligd = this->getPosition().getLigne();
+    unsigned int cold = this->getPosition().getColonne();
+    unsigned int liga = ligd, cola = cold;
+
+    while (liga <= 8 && cola <= 8) // En haut à droite
+    {
+        liga++;
+        cola++;
+        Coordonnees arrive = Coordonnees(liga, cola);
+        chemin.push_back(arrive);
+        actionlist.push_back(Action(depart, arrive, chemin));
+    }
+
+    liga = ligd;
+    cola = cold;
+    chemin = {};
+    while (liga >= 0 && cola <= 8) // En bas à droite
+    {
+        liga--;
+        cola++;
+        Coordonnees arrive = Coordonnees(liga, cola);
+        chemin.push_back(arrive);
+        actionlist.push_back(Action(depart, arrive, chemin));
+    }
+    
+    liga = ligd;
+    cola = cold;
+    chemin = {};
+    while (liga >= 0 && cola >= 0) // En bas à gauche
+    {
+        liga--;
+        cola--;
+        Coordonnees arrive = Coordonnees(liga, cola);
+        chemin.push_back(arrive);
+        actionlist.push_back(Action(depart, arrive, chemin));
+    }
+
+    liga = ligd;
+    cola = cold;
+    chemin = {};
+    while (liga <= 8 && cola >= 0) // En haut à gauche
+    {
+        liga++;
+        cola--;
+        Coordonnees arrive = Coordonnees(liga, cola);
+        chemin.push_back(arrive);
+        actionlist.push_back(Action(depart, arrive, chemin));
+    }
+    
+    return actionlist;
 }

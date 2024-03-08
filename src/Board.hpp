@@ -34,6 +34,8 @@ public:
     bool inBoardWay(const Action &action);
 
     bool isAttack(const Action &action);
+
+    Piece *getPieceDepart(const Action &action);
 };
 
 

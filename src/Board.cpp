@@ -38,7 +38,12 @@ vector<Action> Board::getAllActions() {
     return actions;
 }
 
-bool Board::isActionAuthorised(const Action &action) {    
+bool Board::isActionAuthorised(const Action &action) {
+    if (getPieceDepart(action)->getType() == Type(KNIGHT))
+    {
+        return inBoardWay(action);
+    }
+    
     return (emptyWay(action) || isAttack(action)) && inBoardWay(action);
 }
 
@@ -83,4 +88,13 @@ bool Board::isAttack(const Action &action){
         }
     }
     return false;
+}
+
+Piece *Board::getPieceDepart(const Action &action){
+    for (auto p : this->pieces)
+    {
+        if (p->getPosition() == action.getDepart())
+            return p;
+    }
+    return nullptr;
 }
