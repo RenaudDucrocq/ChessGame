@@ -10,7 +10,7 @@ private:
     sf::Vector2u m_position;
     Type m_type;
 public:
-    PieceMock();
+    PieceMock(sf::Vector2u position);
     virtual const Color &getColor();
     virtual const sf::Vector2u &getPosition() const;
     virtual const Type &getType();

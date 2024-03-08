@@ -17,6 +17,12 @@ IPiece::~IPiece()
 {
 }
 
+void IPiece::setPosition()
+{
+    if (m_updateCallback)
+        m_updateCallback();
+}
+
 const std::string &IPiece::getLabel()
 {
     return g_typeLabels.at(m_type);
@@ -25,4 +31,9 @@ const std::string &IPiece::getLabel()
 bool IPiece::operator==(const IPiece &piece)
 {
     return m_type == piece.m_type && getPosition() == piece.getPosition();
+}
+
+void IPiece::setUpdateCallback(const std::function<void()> &callback)
+{
+    m_updateCallback = callback;
 }

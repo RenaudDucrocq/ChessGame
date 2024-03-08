@@ -1,6 +1,6 @@
 #include "PieceMock.hpp"
 
-PieceMock::PieceMock(): IPiece(Type::PAWN), m_color(Color::WHITE), m_position(0, 0), m_type(Type::PAWN)
+PieceMock::PieceMock(sf::Vector2u position): IPiece(Type::PAWN), m_color(Color::WHITE), m_position(position), m_type(Type::PAWN)
 {
 }
 
