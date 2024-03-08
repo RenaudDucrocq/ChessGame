@@ -1,3 +1,5 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 //
 // Created by renaud on 21/11/2023.
 //
@@ -70,3 +72,5 @@ vector <Action> Bishop::getAllActions() {
     
     return actionlist;
 }
+
+#pragma clang diagnostic pop

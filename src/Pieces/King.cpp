@@ -1,3 +1,5 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "cppcoreguidelines-narrowing-conversions"
 //
 // Created by renau on 09/01/2024.
 //
@@ -74,3 +76,5 @@ vector <Action> King::getAllActions() {
     return actions;
 }
 
+
+#pragma clang diagnostic pop
