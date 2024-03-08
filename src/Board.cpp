@@ -17,7 +17,7 @@ const vector<Piece *> &Board::getPieces() const {
 }
 
 void Board::addPiece(Piece *piece) {
-    this->pieces.push_back(piece);
+    this->pieces.emplace_back(piece);
     if (piece->getCouleur() == this->black->getCouleur())
         this->black->addPiece(piece);
     else

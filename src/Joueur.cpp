@@ -26,7 +26,7 @@ const Piece *Joueur::getPiece(Coordonnees coordonnees) const {
 }
 
 void Joueur::addPiece(Piece *piece) {
-    this->pieces.push_back(piece);
+    this->pieces.emplace_back(piece);
 }
 
 int Joueur::getScore() const {

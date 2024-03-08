@@ -21,15 +21,15 @@ vector <Action> Bishop::getAllActions() {
     Coordonnees depart = this->getPosition();
     unsigned int ligd = this->getPosition().getLigne();
     unsigned int cold = this->getPosition().getColonne();
-    unsigned int liga = ligd, cola = cold;
+    int liga = ligd, cola = cold;
 
     while (liga <= 8 && cola <= 8) // En haut à droite
     {
         liga++;
         cola++;
         Coordonnees arrive = Coordonnees(liga, cola);
-        chemin.push_back(arrive);
-        actionlist.push_back(Action(depart, arrive, chemin));
+        chemin.emplace_back(arrive);
+        actionlist.emplace_back(depart, arrive, chemin);
     }
 
     liga = ligd;
@@ -40,8 +40,8 @@ vector <Action> Bishop::getAllActions() {
         liga--;
         cola++;
         Coordonnees arrive = Coordonnees(liga, cola);
-        chemin.push_back(arrive);
-        actionlist.push_back(Action(depart, arrive, chemin));
+        chemin.emplace_back(arrive);
+        actionlist.emplace_back(depart, arrive, chemin);
     }
     
     liga = ligd;
@@ -52,8 +52,8 @@ vector <Action> Bishop::getAllActions() {
         liga--;
         cola--;
         Coordonnees arrive = Coordonnees(liga, cola);
-        chemin.push_back(arrive);
-        actionlist.push_back(Action(depart, arrive, chemin));
+        chemin.emplace_back(arrive);
+        actionlist.emplace_back(depart, arrive, chemin);
     }
 
     liga = ligd;
@@ -64,8 +64,8 @@ vector <Action> Bishop::getAllActions() {
         liga++;
         cola--;
         Coordonnees arrive = Coordonnees(liga, cola);
-        chemin.push_back(arrive);
-        actionlist.push_back(Action(depart, arrive, chemin));
+        chemin.emplace_back(arrive);
+        actionlist.emplace_back(depart, arrive, chemin);
     }
     
     return actionlist;
