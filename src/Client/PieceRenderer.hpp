@@ -4,12 +4,12 @@
 #include "SFML/Graphics.hpp"
 #include "Interface/IPiece.hpp"
 #include "Client/BoardBackground.hpp"
+#include "Engine/Engine.hpp"
 
 class PieceRenderer: public sf::Drawable
 {
 private:
     IPiece &m_piece;
-    sf::Texture m_texture;
     sf::Sprite m_sprite;
 public:
     PieceRenderer(IPiece &piece);

@@ -54,6 +54,7 @@ add_executable(
 )
 
 add_subdirectory(Client)
+add_subdirectory(Engine)
 add_subdirectory(Interface)
 
 if (WIN32)

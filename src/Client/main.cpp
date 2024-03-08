@@ -11,7 +11,7 @@
 int main(int argc, char* argv[])
 {    
     sf::VideoMode resolution(1280, 720);
-    sf::RenderWindow window(resolution, "ChessGame", sf::Style::None);
+    sf::RenderWindow window(resolution, "ChessGame", sf::Style::Default);
     sf::View view;
 
     float boardSize = 8.0f * BoardBackground::getSquareSize();
