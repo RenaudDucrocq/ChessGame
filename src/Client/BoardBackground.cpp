@@ -1,8 +1,8 @@
-#include "VBoard.hpp"
+#include "BoardBackground.hpp"
 
-int VBoard::c_squareSize = 92;
+unsigned int BoardBackground::c_squareSize = 128;
 
-VBoard::VBoard()
+BoardBackground::BoardBackground()
 {
     m_boardTexture.create(8 * c_squareSize, 8 * c_squareSize);
 
@@ -36,12 +36,12 @@ VBoard::VBoard()
     m_boardSprite.setPosition(0, 0);
 }
 
-void VBoard::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void BoardBackground::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     target.draw(m_boardSprite, states);
 }
 
-int VBoard::getSquareSize()
+unsigned int BoardBackground::getSquareSize()
 {
-    return VBoard::c_squareSize;
+    return BoardBackground::c_squareSize;
 }

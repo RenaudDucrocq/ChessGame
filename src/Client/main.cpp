@@ -1,19 +1,22 @@
 #include <iostream>
+#include <vector>
 #include <SFML/Graphics.hpp>
+#include <memory>
 
-#include "Client/VBoard.hpp"
+#include "Client/BoardBackground.hpp"
 #include "Interface/IGame.hpp"
 #include "Client/Mock/GameMock.hpp"
+#include "Client/PieceRenderer.hpp"
 
 int main(int argc, char* argv[])
 {    
     sf::VideoMode resolution(1280, 720);
-    sf::RenderWindow window(resolution, "ChessGame");
+    sf::RenderWindow window(resolution, "ChessGame", sf::Style::Default);
     sf::View view;
 
-    float boardSize = 8.0f * VBoard::getSquareSize();
+    float boardSize = 8.0f * BoardBackground::getSquareSize();
 
-    view.setSize(resolution.width, resolution.height);
+    view.setSize(boardSize * resolution.width / resolution.height, boardSize);
     view.setCenter(sf::Vector2f(boardSize / 2, boardSize / 2));
     window.setView(view);
     window.setVerticalSyncEnabled(true);
@@ -21,11 +24,12 @@ int main(int argc, char* argv[])
     GameMock gameMock;
     IGame &game = gameMock;
 
-    VBoard board;
+    BoardBackground board;
+    std::vector<std::unique_ptr<PieceRenderer>> pieces;
 
     for (auto piece : game.getBoard().getPieces())
     {
-        std::cout << piece->getLabel() << std::endl;
+        pieces.push_back(std::make_unique<PieceRenderer>(*piece));
     }
 
     while(window.isOpen())
@@ -38,6 +42,12 @@ int main(int argc, char* argv[])
 
         window.clear(sf::Color(0, 0, 0));
         window.draw(board);
+
+        for (auto&& piece : pieces)
+        {
+            window.draw(*piece);
+        }
+
         window.display();
     }
 
