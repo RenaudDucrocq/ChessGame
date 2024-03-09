@@ -13,7 +13,7 @@ public:
     PieceMock(sf::Vector2u position);
     virtual const Color &getColor();
     virtual const sf::Vector2u &getPosition() const;
-    virtual const Type &getType();
+    virtual const Type &getType() const;
 };
 
 
