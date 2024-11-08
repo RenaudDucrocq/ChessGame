@@ -36,7 +36,7 @@ int Joueur::getScore() const {
 vector<Action> Joueur::getAllActions() {
     vector<Action> actions = {};
     for (auto p : this->pieces) {
-        actions.insert(actions.cend(),p->getAllActions().cbegin(),p->getAllActions().cend());
+        actions.insert(actions.cend(), p->getPossibleActions().cbegin(), p->getPossibleActions().cend());
     }
 
     return actions;

@@ -16,6 +16,6 @@ unsigned int Pawn::getValue() {
     return 1;
 }
 
-vector <Action> Pawn::getAllActions() {
+vector <Action> Pawn::getPossibleActions() {
     return {};
 }

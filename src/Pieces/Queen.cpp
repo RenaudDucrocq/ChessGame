@@ -16,6 +16,6 @@ unsigned int Queen::getValue() {
     return 9;
 }
 
-vector <Action> Queen::getAllActions() {
+vector <Action> Queen::getPossibleActions() {
     return {};
 }

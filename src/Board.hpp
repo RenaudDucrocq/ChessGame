@@ -21,19 +21,13 @@ public:
 
     void addPiece(Piece *piece);
 
-    vector<Action> getAllActions();
-
-    bool isActionAuthorised(const Action &action);
+    vector<Action> getAllPossibleActions();
 
     bool emptyCell(Coordonnees coordonnees);
 
     bool emptyWay(const Action &action);
 
-    bool inBoardCell(Coordonnees coordonnees);
-
-    bool inBoardWay(const Action &action);
-
-    bool isAttack(const Action &action);
+    static bool inBoardCell(Coordonnees coordonnees);
 
     Piece *getPieceDepart(const Action &action);
 };

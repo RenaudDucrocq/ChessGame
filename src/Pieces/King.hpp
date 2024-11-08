@@ -11,7 +11,7 @@ class King : public Piece {
 public:
     King(Coordonnees position, Couleur couleur1);
 
-    vector<Action> getAllActions() override;
+    vector<Action> getPossibleActions() override;
 
     Type getType() override;
 

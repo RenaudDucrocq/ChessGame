@@ -17,7 +17,7 @@ unsigned int King::getValue() {
     return 0;
 }
 
-vector <Action> King::getAllActions() {
+vector <Action> King::getPossibleActions() {
     vector<Action> actions;
     unsigned int ligd = this->getPosition().getLigne();
     unsigned int cold = this->getPosition().getColonne();

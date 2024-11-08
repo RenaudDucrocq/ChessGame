@@ -24,7 +24,7 @@ void Board::addPiece(Piece *piece) {
         this->white->addPiece(piece);
 }
 
-vector<Action> Board::getAllActions() {
+vector<Action> Board::getAllPossibleActions() {
     vector<Action> actions = {};
     actions.insert(
             actions.cend(),
@@ -36,15 +36,6 @@ vector<Action> Board::getAllActions() {
             this->white->getAllActions().cend());
 
     return actions;
-}
-
-bool Board::isActionAuthorised(const Action &action) {
-    if (getPieceDepart(action)->getType() == Type(KNIGHT))
-    {
-        return inBoardWay(action);
-    }
-    
-    return (emptyWay(action) || isAttack(action)) && inBoardWay(action);
 }
 
 bool Board::emptyCell(Coordonnees coordonnees) {
@@ -65,29 +56,7 @@ bool Board::emptyWay(const Action &action) {
 }
 
 bool Board::inBoardCell(Coordonnees coordonnees) {
-    return coordonnees.getLigne() <= 8 && coordonnees.getColonne() <= 8 && coordonnees.getLigne() >= 0 &&
-           coordonnees.getColonne() >= 0;
-}
-
-bool Board::inBoardWay(const Action &action) {
-    if (all_of(action.getChemin().cbegin(), action.getChemin().cend(), [this](Coordonnees c) {
-        return this->inBoardCell(c);
-    }))
-        return true;
-    return false;
-}
-
-bool Board::isAttack(const Action &action){
-    if (!emptyWay(action))
-    {   
-        for (auto c : action.getChemin()){
-            if (!emptyCell(c) && c == action.getArrive())
-                return true;
-            else if (!emptyCell(c) && c != action.getArrive())
-                return false;
-        }
-    }
-    return false;
+    return coordonnees.getLigne() <= 8 && coordonnees.getColonne() <= 8;
 }
 
 Piece *Board::getPieceDepart(const Action &action){

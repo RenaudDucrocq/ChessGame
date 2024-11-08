@@ -16,6 +16,6 @@ unsigned int Rook::getValue() {
     return 5;
 }
 
-vector <Action> Rook::getAllActions() {
+vector <Action> Rook::getPossibleActions() {
     return {};
 }

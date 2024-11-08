@@ -21,7 +21,7 @@ public:
 
     void setPosition(Coordonnees position);
 
-    virtual vector <Action> getAllActions() = 0;
+    virtual vector <Action> getPossibleActions() = 0;
 
     bool sameColor(Couleur couleur1);
 

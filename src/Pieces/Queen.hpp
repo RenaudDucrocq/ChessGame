@@ -11,7 +11,7 @@ class Queen : public Piece {
 public:
     Queen(Coordonnees position, Couleur couleur1);
 
-    vector<Action> getAllActions() override;
+    vector<Action> getPossibleActions() override;
 
     Type getType() override;
 
