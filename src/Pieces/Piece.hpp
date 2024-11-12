@@ -7,7 +7,8 @@
 
 #include "Couleur.hpp"
 #include "Action.hpp"
-#include "Board.hpp"
+
+class Board;
 
 enum Type{
     BISHOP, KING, KNIGHT, PAWN, QUEEN, ROOK
