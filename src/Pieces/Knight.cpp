@@ -15,6 +15,6 @@ unsigned int Knight::getValue() {
     return 3;
 }
 
-vector<Action> Knight::getPossibleActions() {
+vector<Action> Knight::getPossibleActions(const Board &board) {
     return {};
 }

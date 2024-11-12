@@ -5,9 +5,9 @@
 #ifndef MAIN_PIECE_HPP
 #define MAIN_PIECE_HPP
 
-#include "Coordonnees.hpp"
 #include "Couleur.hpp"
 #include "Action.hpp"
+#include "Board.hpp"
 
 enum Type{
     BISHOP, KING, KNIGHT, PAWN, QUEEN, ROOK
@@ -21,7 +21,7 @@ public:
 
     void setPosition(Coordonnees position);
 
-    virtual vector <Action> getPossibleActions() = 0;
+    virtual vector<Action> getPossibleActions(const Board &board) = 0;
 
     bool sameColor(Couleur couleur1);
 

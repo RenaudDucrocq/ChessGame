@@ -27,7 +27,7 @@ public:
 
     int getScore() const;
 
-    vector<Action> getAllActions();
+    vector<Action> getMyPossibleActions(const Board& board);
 
 };
 

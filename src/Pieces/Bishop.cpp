@@ -17,7 +17,7 @@ unsigned int Bishop::getValue() {
     return 3;
 }
 
-vector <Action> Bishop::getPossibleActions() {
+vector<Action> Bishop::getPossibleActions(const Board &board) {
     vector<Action> actionlist;
     vector<Coordonnees> chemin;
     Coordonnees depart = this->getPosition();

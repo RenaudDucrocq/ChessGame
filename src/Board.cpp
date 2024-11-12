@@ -28,12 +28,12 @@ vector<Action> Board::getAllPossibleActions() {
     vector<Action> actions = {};
     actions.insert(
             actions.cend(),
-            this->black->getAllActions().cbegin(),
-            this->black->getAllActions().cend());
+            this->black->getMyPossibleActions(this).cbegin(),
+            this->black->getMyPossibleActions(this).cend());
     actions.insert(
             actions.cend(),
-            this->white->getAllActions().cbegin(),
-            this->white->getAllActions().cend());
+            this->white->getMyPossibleActions(this).cbegin(),
+            this->white->getMyPossibleActions(this).cend());
 
     return actions;
 }

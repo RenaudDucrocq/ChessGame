@@ -16,6 +16,6 @@ unsigned int Queen::getValue() {
     return 9;
 }
 
-vector <Action> Queen::getPossibleActions() {
+vector<Action> Queen::getPossibleActions(const Board &board) {
     return {};
 }
