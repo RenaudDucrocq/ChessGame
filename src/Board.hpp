@@ -30,6 +30,8 @@ public:
     static bool inBoardCell(Coordonnees coordonnees);
 
     Piece *getPieceDepart(const Action &action);
+
+    static void display();
 };
 
 

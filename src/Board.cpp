@@ -4,6 +4,9 @@
 
 #include "Board.hpp"
 #include <algorithm>
+#include <iostream>
+
+using namespace std;
 
 Board::Board() {
     this->pieces = {};
@@ -66,4 +69,17 @@ Piece *Board::getPieceDepart(const Action &action){
             return p;
     }
     return nullptr;
+}
+
+void Board::display() {
+    cout << " |A|B|C|D|E|F|G|H|\n1|\n2|\n3|\n4|\n5|\n6|\n7|\n8|\n";
+    string tableau[8][8];   // [ligne] [colonne]
+
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
+
+        }
+
+    }
+
 }

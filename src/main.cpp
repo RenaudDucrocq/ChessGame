@@ -12,6 +12,7 @@ int main(int argc, char *argv[]) {
     std::cout << d.to_String() << "\n";
 
     auto *b = new Board();
+    b->display();
     cout << b->inBoardCell(c) << "\n";
     cout << b->inBoardCell(d) << "\n";
 
